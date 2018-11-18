@@ -15,6 +15,7 @@ var userSchema = new Schema({
     status: { type: Number, min: 1, max: 3, required: [true, "The status is required"], enum: statusValidos },
     type: { type: Number, min: 1, max: 3, required: [true, "The type is required"] },
     verifyed: { type: Boolean, required: [true, "The verifyed is required"] },
+    img: { type: String, required: false },
     dateadd: { type: Date, default: Date.now },
     dateupdate: { type: Date, default: Date.now }
 

@@ -6,7 +6,11 @@ var bodyParser = require('body-parser');
 // Importar rutas
 var appRoutes = require('./routes/app');
 var appRoutesUser = require('./routes/usuario');
+var appRoutesEvent = require('./routes/evento');
+var appRoutesEventTypes = require('./routes/event_type');
 var appRoutesLogin = require('./routes/login');
+var appRoutesSearch = require('./routes/busqueda');
+var appRoutesUpload = require('./routes/upload');
 
 // Inicializa variables
 var app = express();
@@ -26,6 +30,10 @@ mongoose.connection.openUri('mongodb://localhost:27017/aeventDB', { useNewUrlPar
 // Rutas
 app.use('/user', appRoutesUser);
 app.use('/login', appRoutesLogin);
+app.use('/event', appRoutesEvent);
+app.use('/event_type', appRoutesEventTypes);
+app.use('/search', appRoutesSearch);
+app.use('/upload', appRoutesUpload);
 app.use('/', appRoutes);
 
 // Escuchar peticiones
